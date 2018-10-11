@@ -1,0 +1,198 @@
+{
+  "paragraphs": [
+    {
+      "text": "%spark\n/// Proper interpreter selection and order sets spark as default, otherwise you can use %spark in first line of paragraph to force zeppelin to use spark interpreter\ndef generateRandomSentence(sentenceId: Int) \u003d {\n    //Implement random sentence generation\n    \"\"\n}\ncase class RandomSentencesGeneratorConfiguration(size: Int) //Add other parameters (min max sentence len)\ndef generateData(conf: RandomSentencesGeneratorConfiguration) \u003d { \n    sc.parallelize((0 to conf.size)).map(generateRandomSentence)\n}\n",
+      "user": "anonymous",
+      "dateUpdated": "2018-10-11 10:12:14.109",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "tableHide": false,
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "generateRandomSentence: (sentenceId: Int)String\ndefined class RandomSentencesGeneratorConfiguration\ngenerateData: (conf: RandomSentencesGeneratorConfiguration)org.apache.spark.rdd.RDD[String]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1538913497216_392994101",
+      "id": "20181007-115817_1635773691",
+      "dateCreated": "2018-10-07 11:58:17.216",
+      "dateStarted": "2018-10-11 10:11:20.058",
+      "dateFinished": "2018-10-11 10:11:24.417",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nimport org.apache.spark.rdd.RDD\ndef countWords(sentences: RDD[String]): Long \u003d {\n    /// Implement word counting\n    0\n\n    \n}",
+      "user": "anonymous",
+      "dateUpdated": "2018-10-11 10:11:22.357",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.rdd.RDD\ncountWords: (sentences: org.apache.spark.rdd.RDD[String])Long\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1538913653702_1318289741",
+      "id": "20181007-120053_991378044",
+      "dateCreated": "2018-10-07 12:00:53.702",
+      "dateStarted": "2018-10-11 10:11:23.501",
+      "dateFinished": "2018-10-11 10:11:26.438",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nval data \u003d generateData(RandomSentencesGeneratorConfiguration(100))\nval count \u003d countWords(data)",
+      "user": "anonymous",
+      "dateUpdated": "2018-10-11 10:09:40.466",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "data: org.apache.spark.rdd.RDD[String] \u003d MapPartitionsRDD[7] at map at \u003cconsole\u003e:32\ncount: Long \u003d 0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1538913802664_-1990261160",
+      "id": "20181007-120322_1717863091",
+      "dateCreated": "2018-10-07 12:03:22.664",
+      "dateStarted": "2018-10-11 10:09:52.904",
+      "dateFinished": "2018-10-11 10:09:54.573",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\n// implement rest of tasks",
+      "user": "anonymous",
+      "dateUpdated": "2018-10-11 10:11:15.410",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1539252470647_128854008",
+      "id": "20181011-100750_1909144895",
+      "dateCreated": "2018-10-11 10:07:50.647",
+      "dateStarted": "2018-10-11 10:11:15.501",
+      "dateFinished": "2018-10-11 10:11:16.017",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "\n",
+      "user": "anonymous",
+      "dateUpdated": "2018-10-11 10:10:15.109",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1539252562417_2147177361",
+      "id": "20181011-100922_2070775240",
+      "dateCreated": "2018-10-11 10:09:22.418",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "/LSDP/l2",
+  "id": "l2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

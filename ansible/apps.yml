@@ -1,0 +1,44 @@
+- name: Install JDK8
+  become: yes
+  become_user: vagrant
+  command: yay --noconfirm --answeredit none -S jdk8 --noconfirm
+
+
+- name: Default java
+  become: yes
+  become_user: root
+  command: archlinux-java set java-8-jdk
+
+- name: Install zeppelin
+  become: yes
+  become_user: vagrant
+  command: yay --noconfirm --answeredit none -S apache-zeppelin
+
+
+- name: Cleanup zeppelin
+  file:
+    state: absent
+    path: /opt/apache-zeppelin/run
+
+- name: Cleanup zeppelin
+  file:
+    state: absent
+    path: /opt/apache-zeppelin/logs
+
+
+- name: Service update
+  become: yes
+  become_user: root
+  lineinfile:
+    path: /usr/lib/systemd/system/apache-zeppelin.service
+    line: "[Install]"
+
+- name: Service update
+  become: yes
+  become_user: root
+  lineinfile:
+    path: /usr/lib/systemd/system/apache-zeppelin.service
+    line: "WantedBy=multi-user.target"
+
+- name: Make sure a service is running
+  systemd: state=started name=apache-zeppelin enabled=yes

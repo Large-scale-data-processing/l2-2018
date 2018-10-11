@@ -1,0 +1,8 @@
+- name: Link notebook
+  become: yes
+  become_user: root
+  file:
+    src: /project/zeppelin/l2
+    dest: /opt/apache-zeppelin/notebook/l2
+    state: link
+    force: true
